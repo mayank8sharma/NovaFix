@@ -1,0 +1,227 @@
+/* -----------------------------------
+   TECHNICAL STACK SECTION STYLES
+   ----------------------------------- */
+.tech-stack-section {
+    padding-block: 80px;
+    background-color: #fff;
+    /* Clean white background */
+    overflow: hidden;
+    /* Contains floating blobs */
+    font-family: 'DM Sans', sans-serif;
+    /* Matches your site font */
+}
+
+/* --- Header --- */
+.tech-header {
+    margin-bottom: 50px;
+}
+
+.tech-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Purple/Pink Gradient Text */
+    background: linear-gradient(90deg, #8E2DE2 0%, #4A00E0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.tech-subtitle {
+    color: #555;
+    font-size: 1.6rem;
+    font-weight: 500;
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+/* --- Layout Wrapper --- */
+.tech-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    position: relative;
+    flex-wrap: wrap;
+    /* Responsive wrapping */
+}
+
+/* --- Left Side: Visual/Image --- */
+.tech-visual {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* The card holding the image */
+.tech-image-card {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(74, 0, 224, 0.3);
+    transform: rotate(-5deg);
+    transition: transform 0.5s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.tech-image-card:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.main-tech-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Decorative Floating Blobs (Blue circles in your image) */
+.tech-blob {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    z-index: 1;
+    opacity: 0.8;
+    animation: floatBlob 6s ease-in-out infinite;
+}
+
+.blob-1 {
+    width: 80px;
+    height: 80px;
+    top: -10px;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.blob-3 {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 0;
+    animation-delay: 1s;
+}
+
+@keyframes floatBlob {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* --- Right Side: Grid --- */
+.tech-grid-container {
+    flex: 1;
+    min-width: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 Columns */
+    gap: 20px;
+}
+
+.tech-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(74, 0, 224, 0.15);
+}
+
+.tech-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.tech-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+/* --- Footer Button --- */
+.tech-footer {
+    margin-top: 60px;
+}
+
+.btn-tech-view {
+    display: inline-block;
+    background: linear-gradient(90deg, #9D00FF 0%, #5E00FF 100%);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(94, 0, 255, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-tech-view:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(94, 0, 255, 0.4);
+    color: #fff;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+    .tech-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tech-visual {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 575px) {
+    .tech-grid-container {
+        grid-template-columns: 1fr;
+        /* Stack cards on small mobile */
+    }
+
+    .tech-title {
+        font-size: 2.5rem;
+    }
+}

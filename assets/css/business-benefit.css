@@ -1,0 +1,130 @@
+/* -----------------------------------
+   BUSINESS BENEFITS SECTION
+   ----------------------------------- */
+.benefits-section {
+    position: relative;
+    padding-block: 100px;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Background Image with Parallax feel */
+.benefits-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Creates the parallax effect */
+    z-index: -2;
+}
+
+/* Dark Blue Overlay */
+.benefits-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 24, 61, 0.85);
+    /* Dark blue tint similar to image */
+    z-index: -1;
+}
+
+/* --- Typography --- */
+.benefits-title {
+    color: #fff;
+    margin-bottom: 60px;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* --- Grid Layout --- */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 Columns */
+    gap: 40px 20px;
+    /* Row gap 40px, Column gap 20px */
+    margin-bottom: 60px;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-icon {
+    font-size: 5rem;
+    /* Icon size */
+    margin-bottom: 20px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.benefit-item:hover .benefit-icon {
+    color: #00c6ff;
+    /* Light blue glow on hover */
+}
+
+.benefit-label {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #e0e0e0;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- Outline Button --- */
+.btn-outline-white {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 15px 40px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background: transparent;
+}
+
+.btn-outline-white:hover {
+    background: #fff;
+    color: #0a183d;
+    /* Matches the dark background color */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Responsive Design --- */
+
+/* Tablet: 2 columns */
+@media (max-width: 992px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 575px) {
+    .benefits-title {
+        font-size: 2.8rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

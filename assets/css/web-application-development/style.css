@@ -1,0 +1,192 @@
+/* --- GENERAL RESET & VARIABLES --- */
+:root {
+    --primary-blue: #151b8d;
+    --deep-purple: #800080;
+    --white: #ffffff;
+    --dark-bg: #0d1b2a;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- PRELOADER --- */
+.preload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.preload.loaded {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- TOP BAR --- */
+.topbar {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.topbar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.separator {
+    width: 1px;
+    height: 15px;
+    background: #444;
+    margin: 0 10px;
+}
+
+/* --- HEADER & NAVBAR --- */
+.header {
+    background: #1a1a1a;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.navbar-link {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    color: #f9a825;
+}
+
+/* --- NEW HERO SECTION --- */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section h1 {
+    color: var(--white);
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+/* --- NEW BUSINESS FOOTPRINT SECTION --- */
+.business-footprint {
+    padding: 80px 20px;
+    text-align: center;
+    background: var(--white);
+}
+
+.main-heading {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #800080, #ff0000, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.sub-heading {
+    display: block;
+    font-size: 1.1em;
+    color: var(--deep-purple);
+    margin-top: 10px;
+}
+
+.description {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* --- MOBILE MENU --- */
+.nav-open-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        display: none;
+    }
+
+    .nav-open-btn {
+        display: block;
+    }
+
+    .topbar .item-2,
+    .topbar .separator {
+        display: none;
+    }
+}
