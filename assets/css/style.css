@@ -665,7 +665,7 @@ body.nav-active {
 }
 
 .hero-title {
-    min-height: 120px; /* Adjust based on your font size */
+    min-height: 100px; /* Adjust based on your font size */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -675,6 +675,7 @@ body.nav-active {
     border-right: 3px solid var(--gold-crayola);
     padding-right: 5px;
     animation: blink 0.7s step-end infinite;
+    font-size: 70px;
 }
 
 @keyframes blink {
@@ -1157,6 +1158,7 @@ body.nav-active {
 
 .hero-description{
   color : var(--brand-orange);
+  
 }
 #hero-description {
     color: var(--text-secondary);
